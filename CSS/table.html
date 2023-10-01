@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla con Formulario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .add-button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .add-form {
+            display: none;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .show-form {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+        </tr>
+        <tr>
+            <td>Jane</td>
+            <td>Smith</td>
+            <td>jane@example.com</td>
+        </tr>
+    </table>
+    
+    <button class="add-button" id="addButton">Agregar Registro</button>
+
+    <div class="add-form" id="addForm">
+        <h2>Formulario de Registro</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre"><br><br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <script>
+        const addButton = document.getElementById('addButton');
+        const addForm = document.getElementById('addForm');
+
+        addButton.addEventListener('click', () => {
+            addForm.classList.toggle('show-form');
+        });
+    </script>
+</body>
+</html>
